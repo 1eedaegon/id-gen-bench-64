@@ -8,6 +8,7 @@ mod uniqueness_tests {
     use ulid::Ulid;
     use uuid::Uuid;
 
+    // WARN: is not bench or stress testing
     const TEST_COUNT: usize = 1_000_000;
 
     #[test]

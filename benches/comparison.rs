@@ -1,4 +1,4 @@
-use criterion::{BenchmarkId, Criterion, criterion_group, criterion_main};
+use criterion::{Criterion, criterion_group, criterion_main};
 use snowflake::ProcessUniqueId;
 use sonyflake::Sonyflake;
 use std::hint::black_box;
@@ -6,10 +6,9 @@ use ulid::Ulid;
 use uuid::Uuid;
 
 fn compare_all_generators(c: &mut Criterion) {
-    // 같은 그룹에 모든 생성기를 넣으면 자동 비교!
     let mut group = c.benchmark_group("id_generators_comparison");
 
-    // rs-snowflake
+    // snowflake
     group.bench_function("snowflake", |b| {
         b.iter(|| black_box(ProcessUniqueId::new()))
     });
