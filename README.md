@@ -6,8 +6,8 @@ Average performance measured with Criterion.rs:
 
 | Library | Average Time | Relative Performance | Features |
 |---------|--------------|---------------------|----------|
-| snowflake | **~2.15 ns** | 1x (baseline) | Fastest, Twitter Snowflake implementation |
-| sonyflake | ~39 µs | ~18,000x slower | Slowest, Sony's Snowflake variant |
+| snowflake | **~2.15 ns** | 1x (baseline) | 64-bit, Fastest, Twitter Snowflake implementation |
+| sonyflake | ~39 µs | ~18,000x slower | 64-bit, Slowest, Sony's Snowflake variant |
 | ulid | ~41.4 ns | ~19x slower | 128-bit |
 | uuid v4 | ~440 ns | ~205x slower | 128-bit |
 | uuid v7 | ~501 ns | ~233x slower | 128-bit |
