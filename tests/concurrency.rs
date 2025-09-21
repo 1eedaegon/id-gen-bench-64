@@ -11,6 +11,8 @@ use uuid::Uuid;
 const THREADS: usize = 10;
 const IDS_PER_THREAD: usize = 10_000;
 
+// TODO: Enhance test thread-safe condition
+
 #[test]
 fn test_concurrency_snowflake_uniqueness() {
     let all_ids = Arc::new(Mutex::new(HashSet::new()));
@@ -56,7 +58,6 @@ fn test_concurrency_snowflake_uniqueness() {
 
 #[test]
 fn test_concurrency_sonyflake_uniqueness() {
-    // Sonyflake는 내부적으로 thread-safe하지 않으므로 Mutex 필요
     let generator = Arc::new(Mutex::new(Sonyflake::builder().finalize().unwrap()));
     let all_ids = Arc::new(Mutex::new(HashSet::new()));
     let mut handles = vec![];

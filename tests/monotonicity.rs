@@ -42,6 +42,7 @@ mod test_monotonicity {
         }
     }
 
+    // TODO: UUID is not monotonic
     #[test]
     fn test_monotonicity_uuid() {
         let mut prev = uuid::Uuid::new_v4();
